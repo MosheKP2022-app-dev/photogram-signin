@@ -33,10 +33,21 @@
           <a href="/photos">Photos</a>
         </li>
         <li>
-          
+     <%= session.fetch(:user_id)%>
         </li>
       </ul>
     </nav>
+<% if notice.present? %>
+<div>
+<%= notice %>
+</div>
+<%end%>
+
+<% if alert.present? %>
+<div style="color: red">
+<%= alert%>
+</div>
+<%end%>
 
     <%= yield %>
   </body>

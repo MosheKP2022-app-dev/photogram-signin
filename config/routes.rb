@@ -2,7 +2,13 @@ Rails.application.routes.draw do
 
   get("users_sign_up", { :controller => "users", :action => "new_registration_form"} )
   
+  get("users_sign_out", { :controller => "users", :action => "toast_cookies"} )
+
+  get("users_sign_in", { :controller => "users", :action => "new_session_form"} )
+
   get("/", { :controller => "users", :action => "index" })
+
+  post("verify_credentials", {:controller => "users", :action=> "authenticate"})
 
   # User routes
 
